@@ -4,8 +4,8 @@ type Queue[T any] struct {
 	items []T
 }
 
-func (q *Queue[T]) Push(value T) {
-	q.items = append(q.items, value)
+func (q *Queue[T]) Push(value ...T) {
+	q.items = append(q.items, value...)
 }
 
 func (q *Queue[T]) Front() T {
