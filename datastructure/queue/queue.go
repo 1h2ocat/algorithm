@@ -12,10 +12,6 @@ func (q *Queue[T]) Front() T {
 	return q.items[0]
 }
 
-func (q *Queue[T]) Back() T {
-	return q.items[len(q.items)-1]
-}
-
 func (q *Queue[T]) Pop() {
 	q.items = q.items[1:]
 }
