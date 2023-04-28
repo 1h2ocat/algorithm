@@ -11,10 +11,6 @@ type LinkedList[T any] struct {
 	tail *LinkedListNode[T]
 }
 
-func NewLinkedList[T any]() *LinkedList[T] {
-	return &LinkedList[T]{}
-}
-
 // Front return first node value
 func (s *LinkedList[T]) Front() T {
 	return s.head.Value

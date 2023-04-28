@@ -3,7 +3,7 @@ package list
 import "testing"
 
 func TestLinkedList_Front(t *testing.T) {
-	list := NewLinkedList[int]()
+	var list LinkedList[int]
 	list.PushFront(1)
 	list.PushFront(2)
 	list.PushFront(3)
@@ -15,7 +15,7 @@ func TestLinkedList_Front(t *testing.T) {
 }
 
 func TestLinkedList_Back(t *testing.T) {
-	list := NewLinkedList[int]()
+	var list LinkedList[int]
 	list.PushBack(1)
 	list.PushBack(2)
 	list.PushBack(3)
@@ -27,7 +27,7 @@ func TestLinkedList_Back(t *testing.T) {
 }
 
 func TestLinkedList_Begin(t *testing.T) {
-	list := NewLinkedList[int]()
+	var list LinkedList[int]
 	list.PushFront(1)
 	list.PushFront(2)
 	list.PushFront(3)
@@ -39,7 +39,7 @@ func TestLinkedList_Begin(t *testing.T) {
 }
 
 func TestLinkedList_End(t *testing.T) {
-	list := NewLinkedList[int]()
+	var list LinkedList[int]
 	list.PushBack(1)
 	list.PushBack(2)
 	list.PushBack(3)
@@ -51,7 +51,7 @@ func TestLinkedList_End(t *testing.T) {
 }
 
 func TestLinkedList_Erase(t *testing.T) {
-	list := NewLinkedList[int]()
+	var list LinkedList[int]
 	list.PushFront(1)
 	list.PushFront(2)
 	list.PushFront(3)
@@ -65,7 +65,7 @@ func TestLinkedList_Erase(t *testing.T) {
 }
 
 func TestLinkedList_Insert(t *testing.T) {
-	list := NewLinkedList[int]()
+	var list LinkedList[int]
 	list.PushBack(1)
 	list.PushBack(2)
 	list.PushBack(3)
@@ -79,7 +79,7 @@ func TestLinkedList_Insert(t *testing.T) {
 }
 
 func TestLinkedList_PopBack(t *testing.T) {
-	list := NewLinkedList[int]()
+	var list LinkedList[int]
 	list.PushBack(1)
 	list.PushBack(2)
 	list.PushBack(3)
@@ -93,7 +93,7 @@ func TestLinkedList_PopBack(t *testing.T) {
 }
 
 func TestLinkedList_PopFront(t *testing.T) {
-	list := NewLinkedList[int]()
+	var list LinkedList[int]
 	list.PushFront(1)
 	list.PushFront(2)
 	list.PushFront(3)
@@ -107,7 +107,7 @@ func TestLinkedList_PopFront(t *testing.T) {
 }
 
 func TestLinkedList_RemoveIf(t *testing.T) {
-	list := NewLinkedList[int]()
+	var list LinkedList[int]
 	list.PushBack(1)
 	list.PushBack(2)
 	list.PushBack(3)
@@ -123,7 +123,7 @@ func TestLinkedList_RemoveIf(t *testing.T) {
 }
 
 func TestLinkedList_Reverse(t *testing.T) {
-	list := NewLinkedList[int]()
+	var list LinkedList[int]
 	list.PushBack(4)
 	list.PushBack(3)
 	list.PushBack(2)
@@ -141,7 +141,7 @@ func TestLinkedList_Reverse(t *testing.T) {
 }
 
 func TestLinkedList_Size(t *testing.T) {
-	list := NewLinkedList[int]()
+	var list LinkedList[int]
 	list.PushBack(1)
 	list.PushBack(2)
 	list.PushBack(3)
@@ -153,7 +153,7 @@ func TestLinkedList_Size(t *testing.T) {
 }
 
 func TestLinkedList_Sort(t *testing.T) {
-	list := NewLinkedList[int]()
+	var list LinkedList[int]
 	list.PushBack(4)
 	list.PushBack(2)
 	list.PushBack(3)
@@ -173,19 +173,19 @@ func TestLinkedList_Sort(t *testing.T) {
 }
 
 func TestLinkedList_Swap(t *testing.T) {
-	list := NewLinkedList[int]()
+	var list LinkedList[int]
 	list.PushBack(1)
 	list.PushBack(2)
 	list.PushBack(3)
 	list.PushBack(4)
 
-	list2 := NewLinkedList[int]()
+	var list2 LinkedList[int]
 	list2.PushBack(5)
 	list2.PushBack(6)
 	list2.PushBack(7)
 	list2.PushBack(8)
 
-	list.Swap(list2)
+	list.Swap(&list2)
 
 	if list.Begin().Value != 5 {
 		t.Errorf("Swap() = %d; want 2", list.Begin().Value)
